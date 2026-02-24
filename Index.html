@@ -6,19 +6,12 @@
     <title>Najashi Abdullah | Brewers Digital Strategy Case Study</title>
     
     <meta name="description" content="Digital Strategy Case Study for the Milwaukee Brewers. Implementing elite SEO, Social Media Scaling, and Creative HUD nodes by Najashi Abdullah.">
-    <meta name="keywords" content="Digital Strategy, Milwaukee Brewers, SEO, Social Media Scaling, Data Analytics, Najashi Abdullah">
-    <link rel="canonical" href="https://yourdomain.com/brewers-case-study">
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "CreativeWork",
       "name": "Brewers Digital Strategy Case Study",
-      "author": {
-        "@type": "Person",
-        "name": "Najashi Abdullah"
-      },
-      "description": "A high-performance digital strategy module focusing on social media scaling and SEO growth for professional sports entities.",
+      "author": { "@type": "Person", "name": "Najashi Abdullah" },
       "datePublished": "2026-02-23"
     }
     </script>
@@ -39,61 +32,184 @@
                         cityBlue: '#009BCC',
                     },
                     fontFamily: { bebas: ['"Bebas Neue"', 'sans-serif'], inter: ['Inter', 'sans-serif'] },
-                    boxShadow: { 'gold-glow': '0 0 25px rgba(255, 197, 47, 0.4)', 'hud-panel': 'inset 0 0 20px rgba(255, 197, 47, 0.1), 0 8px 32px rgba(0, 0, 0, 0.5)' }
+                    boxShadow: { 'gold-glow': '0 0 25px rgba(255, 197, 47, 0.4)', 'hud-panel': 'inset 0 0 20px rgba(255, 197, 47, 0.1), 0 8px 32px rgba(0, 0, 0, 0.5)', 'city-glow': '0 0 30px rgba(0, 155, 204, 0.5)' }
                 }
             }
         }
     </script>
 
     <style>
-        body { background-color: #050B14; color: #d1d1d1; font-family: 'Inter', sans-serif; }
-        .tech-grid {
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-        .launch-sequence {
-            border: 1px solid var(--gold);
-            padding: 20px;
-            background: rgba(18, 40, 75, 0.8);
-            backdrop-filter: blur(10px);
-        }
-        .neon-text { text-shadow: 0 0 10px #FFC52F; }
+        body { font-family: 'Inter', sans-serif; background-color: #050B14; color: #fff; overflow-x: hidden; }
+        h1, h2, h3, .font-bebas { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em; text-transform: uppercase; }
+        .tech-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px); }
+        .glass-panel { background: rgba(18, 40, 75, 0.4); backdrop-filter: blur(16px); border: 1px solid rgba(255, 197, 47, 0.2); }
+        .neon-text { text-shadow: 0 0 10px rgba(255, 197, 47, 0.5); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        @keyframes floatHeart { 0% { transform: translateY(0) scale(1); opacity: 1; } 100% { transform: translateY(-120px) scale(1.8); opacity: 0; } }
+        .anim-float-heart { animation: floatHeart 1.5s ease-out forwards; }
     </style>
 </head>
-<body class="tech-grid">
+<body class="antialiased tech-grid">
 
-    <div class="min-h-screen flex items-center justify-center p-6">
-        <div class="max-w-4xl w-full glass-panel p-10 rounded-2xl border border-gold/30 shadow-hud-panel text-center">
-            <div class="inline-flex items-center gap-2 px-4 py-2 bg-gold/10 rounded-full mb-8">
-                <span class="w-3 h-3 bg-gold rounded-full animate-ping"></span>
-                <span class="text-gold font-mono text-xs font-bold tracking-[0.3em] uppercase">Status: Launch Initiated</span>
+    <nav class="fixed w-full z-50 py-6 px-6 md:px-12 bg-[#050B14]/80 backdrop-blur-md border-b border-gold/10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="https://upload.wikimedia.org/wikipedia/en/b/b8/Milwaukee_Brewers_logo.svg" class="w-10 h-10" alt="Logo">
+                <div class="text-gold font-bebas text-3xl">BREWERS<span class="text-white">DIGITAL</span></div>
             </div>
-
-            <h1 class="text-white font-bebas text-7xl md:text-9xl mb-6 neon-text">SYSTEM ONLINE</h1>
-            <p class="text-gray-400 font-inter text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-                The Brewers Digital Strategy Node has been successfully refactored. The **Creative HUD**, **SEO Schema**, and **Interactive Scaling Modules** are now active within the main engine.
-            </p>
-
-            <div class="grid md:grid-cols-3 gap-6 mb-12">
-                <div class="p-4 border border-white/10 rounded-lg">
-                    <div class="text-gold font-bebas text-2xl">SEO PACKET</div>
-                    <div class="text-xs font-mono text-green-400">INJECTED</div>
-                </div>
-                <div class="p-4 border border-white/10 rounded-lg">
-                    <div class="text-gold font-bebas text-2xl">MEDIA HUD</div>
-                    <div class="text-xs font-mono text-green-400">SYNCHRONIZED</div>
-                </div>
-                <div class="p-4 border border-white/10 rounded-lg">
-                    <div class="text-gold font-bebas text-2xl">CORE TERMINAL</div>
-                    <div class="text-xs font-mono text-green-400">REFINED</div>
-                </div>
+            <div class="hidden lg:flex space-x-8 font-bebas text-xl">
+                <a href="#strategy" class="hover:text-gold transition">Strategy</a>
+                <a href="#city-edition" class="hover:text-gold transition">City Connect</a>
+                <a href="#video" class="hover:text-gold transition">Shorts</a>
+                <a href="#analytics" class="hover:text-gold transition">Analytics</a>
             </div>
-
-            <a href="#" onclick="window.print(); return false;" class="bg-gold text-navy font-bebas text-3xl px-12 py-4 rounded hover:bg-white transition-all shadow-gold-glow">
-                Generate Deployment Report
-            </a>
         </div>
-    </div>
+    </nav>
 
+    <section class="relative min-h-screen flex items-center pt-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 w-full grid md:grid-cols-2 gap-12 items-center z-10">
+            <div class="reveal">
+                <div class="inline-flex items-center gap-2 px-3 py-1 glass-panel rounded-full mb-6">
+                    <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+                    <span class="text-gold font-mono text-[10px] uppercase font-bold">System Online // 2026</span>
+                </div>
+                <h1 class="text-6xl md:text-8xl leading-none mb-6">Digital Strategy<br><span class="text-gold neon-text">For Modern Baseball</span></h1>
+                <p class="text-gray-400 text-lg mb-8 max-w-lg">Elevating the Milwaukee Brewers' digital footprint through data-driven storytelling and elite aesthetic precision.</p>
+                <a href="#strategy" class="bg-gold text-navy font-bebas text-2xl px-8 py-3 rounded shadow-gold-glow hover:bg-white transition">Initialize Strategy</a>
+            </div>
+            
+            <div class="relative flex justify-center reveal">
+                <div class="w-[280px] h-[580px] border border-white/20 rounded-[2.5rem] bg-black relative overflow-hidden shadow-2xl">
+                    <video src="MB_Hype_reel.mp4" class="w-full h-full object-cover opacity-70" playsinline muted loop autoplay></video>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 w-full px-5">
+                        <h3 class="font-bebas text-2xl text-white">414 HERIT4GE.</h3>
+                        <p class="text-[10px] text-gray-400 font-mono uppercase">Live Feed // Milwaukee</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="strategy" class="py-24 bg-[#0a1629] border-y border-white/10">
+        <div class="max-w-7xl mx-auto px-6 text-center reveal">
+            <h2 class="text-5xl mb-12">Engineered Content Funnels</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-panel p-8 rounded-xl text-left border-l-4 border-l-gold">
+                    <i class="ph-bold ph-ticket text-4xl text-gold mb-4"></i>
+                    <h3 class="text-2xl mb-2">Ticket Funnels</h3>
+                    <p class="text-sm text-gray-400">12% increase in single-game sales via direct-to-purchase social stories.</p>
+                </div>
+                <div class="glass-panel p-8 rounded-xl text-left border-l-4 border-l-cyberBlue">
+                    <i class="ph-bold ph-shopping-cart text-4xl text-cyberBlue mb-4"></i>
+                    <h3 class="text-2xl mb-2">Exclusive Drops</h3>
+                    <p class="text-sm text-gray-400">$150k+ revenue generated in 60 mins via App-First merch releases.</p>
+                </div>
+                <div class="glass-panel p-8 rounded-xl text-left border-l-4 border-l-gold">
+                    <i class="ph-bold ph-chart-line-up text-4xl text-gold mb-4"></i>
+                    <h3 class="text-2xl mb-2">Branded ROI</h3>
+                    <p class="text-sm text-gray-400">4x higher partner brand recall using ML player heat-maps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="city-edition" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="glass-panel p-8 rounded-2xl border-2 border-cityBlue shadow-city-glow relative text-center reveal">
+                <span class="text-cityBlue font-mono text-xs uppercase mb-4 block">Visual Protocol // City Edition</span>
+                <img id="jersey-mockup" src="Home/MB_24_JerseyHome.png" class="w-full h-64 object-contain mb-6 drop-shadow-2xl transition-transform duration-500">
+                <h2 class="text-4xl mb-6">BREW <span class="text-gold">CREW</span></h2>
+                <div class="flex justify-center gap-4">
+                    <button onclick="document.getElementById('jersey-mockup').src='Home/MB_24_JerseyHome.png'" class="px-6 py-2 border border-cityBlue text-cityBlue font-mono text-xs hover:bg-cityBlue hover:text-white transition">HOME</button>
+                    <button onclick="document.getElementById('jersey-mockup').src='Away/MB_24_JerseyAway.png'" class="px-6 py-2 border border-gold text-gold font-mono text-xs hover:bg-gold hover:text-navy transition">AWAY</button>
+                </div>
+            </div>
+            <div class="reveal">
+                <h2 class="text-5xl mb-6">City Connect Logic</h2>
+                <p class="text-gray-400 leading-relaxed mb-6">Treating the City Edition like a streetwear drop. Using lo-fi aesthetics and "tunnel fits" to capture Gen-Z engagement, indexing 45% higher than traditional creative.</p>
+                <div class="w-20 h-1 bg-cityBlue shadow-city-glow"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="video" class="py-24 bg-[#0a1629] border-y border-white/10">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="flex justify-center reveal">
+                <div id="shorts-container" class="w-[300px] h-[600px] bg-black rounded-[2.5rem] border border-white/20 relative overflow-hidden cursor-pointer shadow-hud-panel">
+                    <video id="shorts-video" src="milwaukee_shorts.mp4" class="absolute inset-0 w-full h-full object-cover z-0" playsinline></video>
+                    <div id="shorts-play-icon" class="absolute inset-0 flex items-center justify-center z-10 bg-black/20">
+                        <i class="ph-fill ph-play-circle text-6xl text-white/80"></i>
+                    </div>
+                    <div id="heart-anim-container" class="absolute right-6 bottom-32 z-20 w-10 h-10 pointer-events-none"></div>
+                </div>
+            </div>
+            <div class="reveal">
+                <span class="text-gold font-mono text-xs uppercase mb-2 block">Algorithm Override</span>
+                <h2 class="text-5xl mb-6">Social Media Domination</h2>
+                <p class="text-gray-400 mb-8">Utilizing vertical-first content loops to maximize the 414 heritage story across TikTok and Reels.</p>
+                <button id="btn-boot-matrix" class="flex items-center gap-3 text-gold font-mono text-sm hover:text-white transition">
+                    <i class="ph-fill ph-play-circle text-3xl animate-pulse"></i> BOOT VIDEO MATRIX
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="analytics" class="py-24 text-center">
+        <div class="max-w-7xl mx-auto px-6 reveal">
+            <h2 class="text-5xl mb-12">Performance Data</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass-panel p-10 rounded-xl">
+                    <div class="text-gray-400 font-mono text-xs mb-2">INSTAGRAM REACH</div>
+                    <div class="text-6xl text-gold font-bebas">2.8M</div>
+                </div>
+                <div class="glass-panel p-10 rounded-xl border-t-2 border-cyberBlue">
+                    <div class="text-gray-400 font-mono text-xs mb-2">TIKTOK VIRALITY</div>
+                    <div class="text-6xl text-white font-bebas">+44%</div>
+                </div>
+                <div class="glass-panel p-10 rounded-xl">
+                    <div class="text-gray-400 font-mono text-xs mb-2">B2B ENGAGEMENT</div>
+                    <div class="text-6xl text-gold font-bebas">8.4%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/10 text-center">
+        <p class="text-gray-600 font-mono text-[10px] uppercase tracking-widest">© 2026 Digital Strategy Case Study by Najashi Abdullah.</p>
+    </footer>
+
+    <script>
+        // Scroll Reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Video Control
+        const v = document.getElementById('shorts-video');
+        const c = document.getElementById('shorts-container');
+        const pi = document.getElementById('shorts-play-icon');
+        const ha = document.getElementById('heart-anim-container');
+
+        c.addEventListener('click', () => {
+            if(v.paused) { v.play(); pi.classList.add('opacity-0'); }
+            else { v.pause(); pi.classList.remove('opacity-0'); }
+        });
+
+        document.getElementById('btn-boot-matrix').addEventListener('click', () => {
+            v.currentTime = 0; v.play(); pi.classList.add('opacity-0');
+            c.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        v.addEventListener('ended', () => {
+            const h = document.createElement('i');
+            h.className = 'ph-fill ph-heart text-red-500 text-5xl absolute bottom-0 anim-float-heart';
+            ha.appendChild(h);
+            setTimeout(() => h.remove(), 1500);
+            v.play();
+        });
+    </script>
 </body>
 </html>
