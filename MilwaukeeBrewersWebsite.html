@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Najashi Abdullah | Brewers Digital Strategy Case Study</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#12284B',
+                        gold: '#FFC52F',
+                        cream: '#F4E8D4',
+                        charcoal: '#1A1A1A',
+                        lightGray: '#F7F8FA',
+                        cyberBlue: '#4DF8FF',
+                        cityBlue: '#009BCC',
+                    },
+                    fontFamily: {
+                        bebas: ['"Bebas Neue"', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'gold-glow': '0 0 25px rgba(255, 197, 47, 0.4)',
+                        'gold-glow-strong': '0 0 40px rgba(255, 197, 47, 0.8)',
+                        'hud-panel': 'inset 0 0 20px rgba(255, 197, 47, 0.1), 0 8px 32px rgba(0, 0, 0, 0.5)',
+                        'city-glow': '0 0 30px rgba(0, 155, 204, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1A1A1A;
+            background-color: #050B14;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .font-bebas {
+            font-family: '"Bebas Neue"', sans-serif;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .tech-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            animation: panGrid 60s linear infinite;
+        }
+
+        @keyframes panGrid {
+            0% { background-position: 0 0; }
+            100% { background-position: 400px 400px; }
+        }
+
+        .glass-panel {
+            background: rgba(18, 40, 75, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 197, 47, 0.2);
+        }
+
+        .neon-text {
+            text-shadow: 0 0 10px rgba(255, 197, 47, 0.5), 0 0 20px rgba(255, 197, 47, 0.3);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+
+        .nav-scrolled {
+            background-color: rgba(5, 11, 20, 0.98);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 197, 47, 0.2);
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050B14; }
+        ::-webkit-scrollbar-thumb { background: #FFC52F; border-radius: 4px; }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-120px) scale(1.8); opacity: 0; }
+        }
+        .anim-float-heart {
+            animation: floatHeart 1.5s ease-out forwards;
+        }
+
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 px-6 md:px-12 bg-transparent">
+        <div class="max-w-7xl mx-auto flex justify-between items-center relative z-[60]">
+            <a href="#" class="flex items-center gap-3 hover:opacity-80 transition-opacity group">
+                <img src="https://upload.wikimedia.org/wikipedia/en/b/b8/Milwaukee_Brewers_logo.svg" alt="Brewers Logo" class="w-10 h-10 group-hover:drop-shadow-[0_0_10px_rgba(255,197,47,0.8)] transition-all">
+                <div class="text-gold font-bebas text-3xl tracking-wider">BREWERS<span class="text-white">DIGITAL</span></div>
+            </a>
+            
+            <div class="hidden lg:flex space-x-8 text-white/80 font-inter text-sm font-medium">
+                <a href="#strategy" class="hover:text-gold transition-all duration-300">Brand</a>
+                <a href="#content" class="hover:text-gold transition-all duration-300">Content</a>
+                <a href="#city-edition" class="hover:text-gold transition-all duration-300">City Connect</a>
+                <a href="#video" class="hover:text-gold transition-all duration-300">Shorts</a>
+                <a href="#analytics" class="hover:text-gold transition-all duration-300">Analytics</a>
+            </div>
+
+            <div class="hidden lg:flex items-center">
+                <a href="https://najashiabdullah.my.canva.site/najashi-abdullah-portfolio" target="_blank" class="relative overflow-hidden group border border-gold text-gold font-bebas text-lg px-6 py-2 rounded transition-all duration-300 hover:shadow-gold-glow">
+                    <span class="relative z-10 group-hover:text-navy transition-colors duration-300">Najashi's Portfolio</span>
+                    <div class="absolute inset-0 bg-gold transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 z-0"></div>
+                </a>
+            </div>
+
+            <button id="mobileMenuBtn" class="lg:hidden glass-panel p-2 rounded border border-gold/30 text-gold shadow-hud-panel relative z-[60]">
+                <i class="ph ph-list text-3xl block"></i>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="fixed inset-0 bg-[#050B14]/90 backdrop-blur-2xl z-[55] hidden flex-col items-center justify-center transition-opacity duration-300 opacity-0 border-l border-gold/20">
+            <div class="flex flex-col space-y-8 text-center mt-12 w-full px-6">
+                <a href="#strategy" class="mobile-link text-white font-bebas text-4xl hover:text-gold transition-all">Brand Strategy</a>
+                <a href="#content" class="mobile-link text-white font-bebas text-4xl hover:text-gold transition-all">Content Rhythm</a>
+                <a href="#city-edition" class="mobile-link text-white font-bebas text-4xl hover:text-gold transition-all">City Edition Logic</a>
+                <a href="#video" class="mobile-link text-white font-bebas text-4xl hover:text-gold transition-all">Milwaukee Shorts</a>
+                <a href="#analytics" class="mobile-link text-white font-bebas text-4xl hover:text-gold transition-all">Analytics Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen bg-[#050B14] tech-grid flex items-center pt-24 overflow-hidden">
+        <div class="glow-orb w-[600px] h-[600px] bg-navy/50 top-[-100px] left-[-200px]"></div>
+        <div class="glow-orb w-[400px] h-[400px] bg-gold/10 bottom-[-50px] right-[-100px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 md:px-12 w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="reveal">
+                <div class="inline-flex items-center gap-2 px-3 py-1 glass-panel rounded-full mb-6 border-gold/30">
+                    <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+                    <span class="text-gold font-inter font-bold tracking-widest text-xs uppercase">System Online // 2026</span>
+                </div>
+                <h1 class="text-white text-6xl md:text-8xl leading-[0.9] mb-6 drop-shadow-2xl">Digital Strategy<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-200 neon-text">For Modern Baseball</span></h1>
+                <p class="text-gray-300 font-inter text-lg md:text-xl mb-10 max-w-lg font-light leading-relaxed">Elevating the Milwaukee Brewers' digital footprint through data-driven storytelling and elite futuristic aesthetic precision.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#strategy" class="bg-gold text-navy font-bebas text-2xl px-8 py-3 rounded text-center hover:bg-white transition-colors duration-300 shadow-gold-glow">Initialize Strategy</a>
+                </div>
+            </div>
+            
+            <div class="relative flex justify-center reveal reveal-delay-2 h-[580px]" id="hero-iphone">
+                <div class="w-[280px] h-[580px] border border-white/20 rounded-[2.5rem] bg-black/80 backdrop-blur-md relative shadow-[0_0_50px_rgba(18,40,75,0.8)] flex flex-col p-1" id="iphone-container">
+                    <div class="absolute top-0 inset-x-0 h-6 bg-black w-32 mx-auto rounded-b-xl z-[60] flex justify-center items-center gap-1">
+                        <div class="w-1 h-1 rounded-full bg-green-500"></div>
+                        <div class="w-8 h-1 rounded-full bg-gray-800"></div>
+                    </div>
+                    
+                    <div class="flex-1 rounded-[2.2rem] overflow-hidden relative group border border-white/10 bg-black">
+                        <div id="iphone-vertical-ui" class="h-full w-full bg-[#0a1629] relative">
+                            <video src="MB_HypeReel.mp4" class="w-full h-full opacity-60 object-cover mix-blend-luminosity" playsinline muted loop autoplay></video>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#050B14] via-navy/50 to-transparent"></div>
+                            <div class="absolute bottom-0 w-full p-5 text-white z-10">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/b/b8/Milwaukee_Brewers_logo.svg" class="w-8 h-8 rounded-full object-cover bg-navy p-1" alt="Brewers Logo">
+                                    <span class="font-inter font-bold text-sm tracking-wide">Brewers</span>
+                                </div>
+                                <h3 class="font-bebas text-2xl leading-none mb-2 text-white">FOR MILWAUKEE, 414 HERIT4GE.</h3>
+                                <p class="text-xs font-inter text-gray-400 line-clamp-2">The 26-man squad is locked in. Let's bring it back to Milwaukee. #ThisIsMyCrew</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="absolute top-24 -right-12 glass-panel p-4 rounded-xl shadow-xl animate-float border-l-2 border-gold widget-float" style="animation-delay: 1s;">
+                    <div class="text-gold font-bebas text-3xl neon-text">1.4M+</div>
+                    <div class="text-white/70 text-[10px] font-mono uppercase tracking-widest">Weekly Reach</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="strategy" class="py-24 bg-[#0a1629] relative scroll-mt-24 tech-grid border-y border-white/10">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-white text-5xl md:text-6xl mb-4">High-Performance Campaigns</h2>
+                <div class="w-24 h-1 bg-gold mx-auto shadow-gold-glow"></div>
+                <p class="text-gray-400 font-inter mt-6 max-w-2xl mx-auto">Strategically engineered content loops designed to convert digital engagement into direct revenue streams.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-panel p-8 rounded-lg shadow-hud-panel hover:border-gold hover:shadow-gold-glow transition-all duration-300 transform hover:-translate-y-2 reveal group">
+                    <i class="ph ph-ticket text-4xl text-gold mb-4 group-hover:animate-pulse"></i>
+                    <h3 class="text-2xl text-white font-bebas mb-3 tracking-wide">Dynamic Ticket Funnels</h3>
+                    <p class="text-sm font-inter text-gray-400 leading-relaxed">Direct-to-purchase social stories with real-time seat availability, yielding a 12% increase in single-game ticket sales via Instagram.</p>
+                </div>
+                <div class="glass-panel p-8 rounded-lg shadow-hud-panel hover:border-gold hover:shadow-gold-glow transition-all duration-300 transform hover:-translate-y-2 reveal reveal-delay-1 group">
+                    <i class="ph ph-shopping-cart text-4xl text-gold mb-4 group-hover:animate-pulse"></i>
+                    <h3 class="text-2xl text-white font-bebas mb-3 tracking-wide">Exclusive Merch Drops</h3>
+                    <p class="text-sm font-inter text-gray-400 leading-relaxed">Scarcity-driven "App-First" apparel releases, generating $150k+ in revenue within the first 60 minutes of digital launch.</p>
+                </div>
+                <div class="glass-panel p-8 rounded-lg shadow-hud-panel hover:border-gold hover:shadow-gold-glow transition-all duration-300 transform hover:-translate-y-2 reveal reveal-delay-2 group">
+                    <i class="ph ph-chart-line-up text-4xl text-gold mb-4 group-hover:animate-pulse"></i>
+                    <h3 class="text-2xl text-white font-bebas mb-3 tracking-wide">Sponsor Integration ROI</h3>
+                    <p class="text-sm font-inter text-gray-400 leading-relaxed">Performance-based branded content that utilizes player heat-maps to prove 4x higher partner brand recall vs. traditional signage.</p>
+                </div>
+                <div class="glass-panel p-8 rounded-lg shadow-hud-panel hover:border-gold hover:shadow-gold-glow transition-all duration-300 transform hover:-translate-y-2 reveal reveal-delay-3 group">
+                    <i class="ph ph-database text-4xl text-gold mb-4 group-hover:animate-pulse"></i>
+                    <h3 class="text-2xl text-white font-bebas mb-3 tracking-wide">Predictive Fan Analytics</h3>
+                    <p class="text-sm font-inter text-gray-400 leading-relaxed">ML-driven targeting segments that identify "likely attendees" based on digital sentiment, reducing CPA on paid ads by 35%.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="city-edition" class="py-12 bg-[#050B14] relative scroll-mt-24 tech-grid">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row gap-12 relative">
+            
+            <div class="md:w-1/2 md:sticky top-32 h-[50vh] md:h-screen flex flex-col justify-center reveal z-10">
+                <div class="glass-panel p-8 rounded-2xl border-2 border-cityBlue shadow-city-glow relative overflow-hidden group hover:shadow-[0_0_50px_rgba(0,155,204,0.6)] hover:border-white/50 transition-all duration-500">
+                    <div class="absolute -right-20 -top-20 w-64 h-64 bg-cityBlue/20 rounded-full blur-3xl group-hover:bg-cityBlue/40 transition-all duration-500"></div>
+                    <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-gold/20 rounded-full blur-3xl group-hover:bg-gold/40 transition-all duration-500"></div>
+                    
+                    <span class="text-cityBlue font-mono text-xs tracking-widest uppercase mb-4 block relative z-20">Visual Protocol // CITY EDITION</span>
+                    
+                    <div class="relative w-full h-48 md:h-64 flex items-center justify-center my-6 z-20">
+                        <img id="jersey-mockup" src="Home/MB_24_JerseyHome.png" alt="Brew Crew Jerseys Mockup" class="w-full h-full object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] group-hover:scale-115 group-hover:-translate-y-1 transition-transform duration-500 ease-out relative z-10">
+                    </div>
+                    
+                    <h2 class="text-white text-4xl md:text-5xl font-bebas mb-2 leading-none relative z-20 transition-colors duration-500" style="text-shadow: 0 0 5px rgba(0,155,204,0.4);">
+                        BREW <span class="text-gold" style="text-shadow: 0 0 5px rgba(255,197,47,0.4);">CREW</span>
+                    </h2>
+                    
+                    <div class="mt-8 flex gap-4 relative z-20">
+                        <button onclick="document.getElementById('jersey-mockup').src='Home/MB_24_JerseyHome.png'" class="glass-panel px-6 py-2 text-white font-mono text-xs hover:border-cityBlue hover:text-cityBlue transition-all shadow-hud-panel uppercase tracking-widest cursor-pointer">Home</button>
+                        <button onclick="document.getElementById('jersey-mockup').src='Away/MB_24_JerseyAway.png'" class="glass-panel px-6 py-2 text-white font-mono text-xs hover:border-gold hover:text-gold transition-all shadow-hud-panel uppercase tracking-widest cursor-pointer">Away</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:w-1/2 py-12 md:py-32 space-y-32 z-20">
+                <div class="glass-panel p-8 rounded-xl border-l-4 border-l-cityBlue reveal">
+                    <div class="w-10 h-10 bg-cityBlue/20 rounded-lg flex items-center justify-center mb-6 text-cityBlue">
+                        <i class="ph-bold ph-palette text-2xl"></i>
+                    </div>
+                    <h3 class="text-3xl text-white font-bebas mb-4">City Connect Logic</h3>
+                    <p class="text-gray-400 font-inter leading-relaxed">The Milwaukee Brewers City Connect jerseys celebrate the city’s energy with a modern, premium design. The Home version features a white base with navy and gold accents, while the Away version flips to navy with gold and cream highlights.</p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-xl border-l-4 border-l-gold reveal">
+                    <div class="w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center mb-6 text-gold">
+                        <i class="ph-bold ph-t-shirt text-2xl"></i>
+                    </div>
+                    <h3 class="text-3xl text-white font-bebas mb-4">Merch Drops & Hype</h3>
+                    <p class="text-gray-400 font-inter leading-relaxed">Treating the City Edition less like a uniform and more like a streetwear drop. Content features lo-fi disposable camera aesthetics, tunnel fits, and lifestyle photography.</p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-xl border-l-4 border-l-cyberBlue reveal">
+                    <div class="w-10 h-10 bg-cyberBlue/20 rounded-lg flex items-center justify-center mb-6 text-cyberBlue">
+                        <i class="ph-bold ph-lightning text-2xl"></i>
+                    </div>
+                    <h3 class="text-3xl text-white font-bebas mb-4">Audience Expansion</h3>
+                    <p class="text-gray-400 font-inter leading-relaxed">Data indicates that City Connect aesthetics index 45% higher with Gen-Z and casual fans. We utilize this alternate identity specifically in targeted paid social campaigns.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="video" class="py-24 bg-[#0a1629] overflow-hidden scroll-mt-24 border-y border-white/10 tech-grid">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                
+                <div class="reveal flex justify-center lg:justify-end relative">
+                    <div class="absolute w-64 h-64 bg-gold rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10 translate-x-10 translate-y-10"></div>
+                    
+                    <div id="shorts-container" class="w-[300px] h-[600px] bg-black rounded-[2.5rem] border border-white/20 shadow-[0_0_40px_rgba(255,197,47,0.3)] relative overflow-hidden flex flex-col p-1 cursor-pointer">
+                        <div class="absolute top-0 inset-x-0 h-6 bg-black w-32 mx-auto rounded-b-xl z-30 flex justify-center items-center gap-1">
+                            <div class="w-1 h-1 rounded-full bg-green-500"></div>
+                            <div class="w-8 h-1 rounded-full bg-gray-800"></div>
+                        </div>
+
+                        <div class="flex-1 rounded-[2.2rem] overflow-hidden relative border border-white/10 bg-gray-900">
+                            <video id="shorts-video" src="milwaukee_shorts.mp4" class="absolute inset-0 w-full h-full object-cover z-0" playsinline></video>
+
+                            <div id="shorts-play-icon" class="absolute inset-0 flex items-center justify-center z-30 bg-black/20 transition-opacity duration-300">
+                                <i class="ph-fill ph-play-circle text-6xl text-white/90 drop-shadow-lg"></i>
+                            </div>
+
+                            <div id="heart-anim-container" class="absolute right-6 bottom-32 z-40 w-10 h-10 pointer-events-none flex justify-center items-end"></div>
+
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30 z-10 pointer-events-none"></div>
+
+                            <div class="absolute right-4 bottom-24 flex flex-col gap-6 z-20 text-white items-center pointer-events-none">
+                                <div class="flex flex-col items-center gap-1 drop-shadow-md"><i class="ph-fill ph-heart text-3xl transition"></i><span class="text-xs font-mono">95.4K</span></div>
+                                <div class="flex flex-col items-center gap-1 drop-shadow-md"><i class="ph-fill ph-chat-circle text-3xl"></i><span class="text-xs font-mono">2,442</span></div>
+                                <div class="flex flex-col items-center gap-1 drop-shadow-md"><i class="ph-fill ph-share-network text-2xl"></i><span class="text-xs font-mono">Share</span></div>
+                            </div>
+                            
+                            <div class="absolute bottom-6 left-4 right-16 z-20 text-white pointer-events-none">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/b/b8/Milwaukee_Brewers_logo.svg" class="w-6 h-6 rounded-full bg-navy p-0.5" alt="Brewers">
+                                    <h4 class="font-inter font-bold text-sm drop-shadow-md">@brewers</h4>
+                                </div>
+                                <p class="font-inter text-xs line-clamp-2 drop-shadow-md opacity-90">Game 5. Watch the Milwaukee Brewers take on the Chicago Cubs. #ThisIsMyCrew</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal reveal-delay-2">
+                    <span class="text-gold font-mono text-xs tracking-widest uppercase mb-2 block">Algorithm Override</span>
+                    <h2 class="text-white text-5xl md:text-6xl mb-4">Social Media Domination</h2>
+                    <div class="w-24 h-1 bg-gold mb-10 shadow-gold-glow"></div>
+                    
+                    <div class="space-y-8">
+                        <div class="glass-panel p-6 rounded-xl border-l-2 border-gold hover:bg-white/5 transition">
+                            <div class="flex items-center gap-3 mb-3">
+                                <i class="ph-bold ph-video-camera text-gold text-2xl"></i>
+                                <h3 class="text-2xl text-white font-bebas tracking-wide">"414 Built" Series</h3>
+                            </div>
+                            <p class="text-gray-400 font-inter text-sm leading-relaxed">
+                                A cinematic documentary on Milwaukee’s blue-collar spirit, blending heritage and playoff ambition.
+                            </p>
+                        </div>
+
+                        <div class="glass-panel p-6 rounded-xl border-l-2 border-cyberBlue hover:bg-white/5 transition">
+                            <div class="flex items-center gap-3 mb-3">
+                                <i class="ph-bold ph-microphone-stage text-cyberBlue text-2xl"></i>
+                                <h3 class="text-2xl text-white font-bebas tracking-wide">Brewers Through the Ages</h3>
+                            </div>
+                            <p class="text-gray-400 font-inter text-sm leading-relaxed">
+                                A historical fan experience at American Family Field celebrating Milwaukee’s century-plus baseball story.
+                            </p>
+                        </div>
+                        
+                        <div class="pt-4">
+                            <button id="btn-boot-matrix" class="flex items-center gap-2 text-gold font-mono text-sm uppercase tracking-widest hover:text-white transition-colors duration-300">
+                                <i class="ph-fill ph-play-circle text-2xl animate-pulse"></i> Boot Video Matrix
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="analytics" class="py-24 bg-[#050B14] relative scroll-mt-24 tech-grid border-y border-white/10">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="text-gold font-mono text-xs tracking-widest uppercase mb-2 block">Data Terminal</span>
+                <h2 class="text-white text-5xl md:text-6xl mb-4">Platform Performance</h2>
+                <div class="w-24 h-1 bg-cyberBlue mx-auto shadow-[0_0_15px_rgba(77,248,255,0.6)]"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="glass-panel p-8 rounded-xl shadow-hud-panel border-t-2 border-t-gold text-center reveal relative overflow-hidden">
+                    <div class="flex items-center justify-center gap-2 mb-4">
+                        <i class="ph-fill ph-instagram-logo text-2xl text-gold"></i>
+                        <div class="text-gray-400 font-mono text-xs uppercase tracking-widest">Instagram Reach</div>
+                    </div>
+                    <div class="text-white font-bebas text-6xl md:text-7xl flex justify-center items-end gap-1 neon-text">
+                        <span class="count-up" data-target="2.8">0</span><span class="text-5xl mb-1 text-gold">M</span>
+                    </div>
+                    <div class="text-cyberBlue font-mono text-xs mt-4 flex items-center justify-center gap-2 bg-cyberBlue/10 inline-flex px-3 py-1 rounded-full">
+                        <i class="ph-bold ph-trend-up"></i> +18% Growth
+                    </div>
+                </div>
+
+                <div class="glass-panel p-8 rounded-xl shadow-hud-panel border-t-2 border-t-cyberBlue text-center reveal reveal-delay-1 relative overflow-hidden">
+                    <div class="flex items-center justify-center gap-2 mb-4">
+                        <i class="ph-fill ph-tiktok-logo text-2xl text-cyberBlue"></i>
+                        <div class="text-gray-400 font-mono text-xs uppercase tracking-widest">TikTok Virality</div>
+                    </div>
+                    <div class="text-white font-bebas text-6xl md:text-7xl flex justify-center items-end gap-1 drop-shadow-[0_0_15px_rgba(77,248,255,0.5)]">
+                        <span class="text-5xl mb-1 text-cyberBlue">+</span><span class="count-up" data-target="44">0</span><span class="text-5xl mb-1 text-cyberBlue">%</span>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-8 rounded-xl shadow-hud-panel border-t-2 border-t-gold text-center reveal reveal-delay-2 relative overflow-hidden">
+                    <div class="flex items-center justify-center gap-2 mb-4">
+                        <i class="ph-fill ph-linkedin-logo text-2xl text-gold"></i>
+                        <div class="text-gray-400 font-mono text-xs uppercase tracking-widest">LinkedIn B2B</div>
+                    </div>
+                    <div class="text-white font-bebas text-6xl md:text-7xl flex justify-center items-end gap-1 neon-text">
+                        <span class="count-up" data-target="8.4">0</span><span class="text-5xl mb-1 text-gold">%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-8 text-center border-t border-white/10 relative z-20">
+        <div class="flex justify-center items-center gap-2 mb-2">
+            <img src="https://upload.wikimedia.org/wikipedia/en/b/b8/Milwaukee_Brewers_logo.svg" alt="Brewers" class="w-6 h-6">
+            <div class="text-gold font-bebas text-2xl tracking-wider">BREWERS<span class="text-white">DIGITAL</span></div>
+        </div>
+        <p class="text-gray-600 font-mono text-[10px] tracking-widest uppercase">© 2026 Digital Strategy Case Study by Najashi Abdullah.</p>
+    </footer>
+
+    <script>
+        // Navbar & Mobile Menu
+        const navbar = document.getElementById('navbar');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+            } else if (!isMenuOpen) {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+
+        mobileMenuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if(isMenuOpen) {
+                document.body.style.overflow = 'hidden';
+                mobileMenu.classList.remove('hidden');
+                mobileMenuBtn.innerHTML = '<i class="ph ph-x text-3xl block"></i>';
+                navbar.classList.add('nav-scrolled');
+                setTimeout(() => {
+                    mobileMenu.classList.remove('opacity-0');
+                    mobileMenu.classList.add('opacity-100');
+                }, 10);
+            } else {
+                closeMobileMenu();
+            }
+        });
+
+        mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+
+        function closeMobileMenu() {
+            isMenuOpen = false;
+            document.body.style.overflow = '';
+            mobileMenuBtn.innerHTML = '<i class="ph ph-list text-3xl block"></i>';
+            mobileMenu.classList.remove('opacity-100');
+            mobileMenu.classList.add('opacity-0');
+            if (window.scrollY <= 50) navbar.classList.remove('nav-scrolled');
+            setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+        }
+
+        // Vertical Shorts MP4 & Heart Logic
+        const shortsVideo = document.getElementById('shorts-video');
+        const shortsContainer = document.getElementById('shorts-container');
+        const playIcon = document.getElementById('shorts-play-icon');
+        const heartAnimContainer = document.getElementById('heart-anim-container');
+        
+        function toggleShortsPlay() {
+            if(shortsVideo.paused) {
+                shortsVideo.play();
+                playIcon.classList.add('opacity-0');
+            } else {
+                shortsVideo.pause();
+                playIcon.classList.remove('opacity-0');
+            }
+        }
+
+        shortsContainer.addEventListener('click', toggleShortsPlay);
+        
+        document.getElementById('btn-boot-matrix').addEventListener('click', () => {
+            shortsVideo.currentTime = 0;
+            if(shortsVideo.paused) toggleShortsPlay();
+            shortsContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        shortsVideo.addEventListener('ended', () => {
+            const heart = document.createElement('i');
+            heart.className = 'ph-fill ph-heart text-red-500 text-5xl absolute bottom-0 anim-float-heart drop-shadow-lg';
+            heartAnimContainer.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 1500);
+            shortsVideo.play();
+        });
+
+        // Scroll Reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, { threshold: 0.15 });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Count-up
+        const countElements = document.querySelectorAll('.count-up');
+        let animated = false;
+        const countObserver = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting && !animated) {
+                animated = true;
+                countElements.forEach(el => {
+                    const target = parseFloat(el.getAttribute('data-target'));
+                    let current = 0;
+                    const timer = setInterval(() => {
+                        current += target / 60;
+                        if(current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        el.innerText = target % 1 !== 0 ? current.toFixed(1) : Math.floor(current);
+                    }, 2000 / 60);
+                });
+            }
+        }, { threshold: 0.5 });
+        if(document.getElementById('analytics')) countObserver.observe(document.getElementById('analytics'));
+    </script>
+</body>
+</html>
